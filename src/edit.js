@@ -12,7 +12,8 @@ export const Edit=({open,setOpen,deleteid,annotations,setAnnotations})=>{
         setOpen(!open)
       };
     const handledelete=()=>{
-setAnnotations(annotations.filter((a)=>!(a.id===deleteid)))
+var x=annotations.filter((a)=>!(a.id===deleteid))
+setAnnotations([...x])
 setOpen(false)
     }
 

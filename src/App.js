@@ -8,6 +8,7 @@ import CloseIcon from '@mui/icons-material/Close';
 function App() {
   const data= new Array(6).fill(null)
 const[selected,setSelected]=useState('PERSON')
+const[text,setText]=useState()
 const[open,setOpen]=useState()
 const[deleteid,setDeleteid]=useState()
 const[annotate,setAnnotate]=useState({
@@ -17,11 +18,15 @@ const[annotate,setAnnotate]=useState({
 })
 const[annotations,setAnnotations]=useState([])
 useEffect(()=>{
+  var doc = document.getElementById("middle");
+  setText(doc.innerHTML)
+},[])
+useEffect(()=>{
 setAnnotations([...annotations,annotate])
 },[annotate])
 useEffect(()=>{
   var inputText = document.getElementById("middle");
-  var irs = inputText.innerHTML; 
+  var irs =text; 
   annotations.forEach((a,index) => {
     irs=irs.split(a.value).join('<span class="highlighted"><span class="highlight">'+a.value+'</span>'+
     ' '+'<span class="category">'+a.type+' '+'</span></span>')
@@ -74,9 +79,9 @@ const handleclickclose=(i)=>{
 records
 </div>
 <div className='body'>
-  {data.map((d)=><>
+  {data.map((d,index)=><>
   <div className='record'>
-  Lorem ipsum dolor sit amet ...
+  {index+1}.Lorem ipsum dolor sit amet ...
   </div>
   </>)}
 </div>

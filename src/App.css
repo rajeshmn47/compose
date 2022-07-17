@@ -39,7 +39,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 500;
 }
+
 .body{
 height: 60.81vh;
 border-collapse: collapse;
