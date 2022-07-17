@@ -36,6 +36,9 @@
 .record{
   border-bottom: 1px solid #000000;
   height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .body{
 height: 60.81vh;

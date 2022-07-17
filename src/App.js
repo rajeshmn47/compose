@@ -22,9 +22,9 @@ setAnnotations([...annotations,annotate])
 useEffect(()=>{
   var inputText = document.getElementById("middle");
   var irs = inputText.innerHTML; 
-  annotations.forEach(a => {
-    irs=irs.split(a.value).join('<span class="highlighted"><span class="highlight">'+a.value+'</span>'+' '+'<span class="category">'+a.type+' '+'</span></span>')
-
+  annotations.forEach((a,index) => {
+    irs=irs.split(a.value).join('<span class="highlighted"><span class="highlight">'+a.value+'</span>'+
+    ' '+'<span class="category">'+a.type+' '+'</span></span>')
     console.log(a,'king') 
   })
  
@@ -76,7 +76,7 @@ records
 <div className='body'>
   {data.map((d)=><>
   <div className='record'>
-
+  Lorem ipsum dolor sit amet ...
   </div>
   </>)}
 </div>
